@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Fraunces:wght@700&family=Hanken+Grotesk:wght@500;700;800&family=Karla:ital,wght@0,400;1,600&family=Montserrat:wght@500;700&family=Outfit:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+        body {
+            font-family: 'Roboto','sans-serif';
+            text-align: center;
+            align-items: center;
+            margin: 15vh auto;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(106, 100, 100);
+            color: wheat;
+        }
+        label {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        #text {
+            word-break: break-all;
+            text-align: center;
+            font-size: 3rem;
+            padding: 2rem;
+            width: 200px;
+            margin: 2rem;
+            border-radius: 2rem;
+            border: 5px solid rgb(255, 79, 79);
+            background-color: black;
+            color: wheat;
+        }
+        button{
+            border: none;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: brown;
+            color: wheat;
+            font-size: 2rem;
+            margin: 1rem;
+        }
+        button:hover{
+            cursor: pointer;
+            margin: 1px;
+            border: 5px solid wheat;
+        }
+        p{
+            word-break: break-all;
+            font-size: 3rem;
+            margin: .5rem;
+            max-width: 70vw;
+        }
+    </style>
+    <title>Calculate Fatorial Numbers</title>
+</head>
+<body>
+    <label for="text">Enter the number to calculate the factorial:</label>
+    <input type="number" id="text" placeholder="5">
+    <p id="total">0</p>
+    <button onclick="calculateFatorial()">Calculate</button>
+    <script>
+
+        function calculateFatorial(){
+            let factorial = parseInt(document.querySelector('input').value);
+            let result = 1
+            while(factorial>=1){
+                result *= factorial
+                factorial --
+            }
+            console.log('Resultado do Fatorial: ',result)
+            document.getElementById('total').innerText = result
+        }
+
+    </script>
+</body>
+</html>
